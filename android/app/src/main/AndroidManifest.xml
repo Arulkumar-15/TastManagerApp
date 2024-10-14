@@ -22,5 +22,8 @@
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
       </activity>
+         <meta-data
+        android:name="com.google.android.gms.auth.api.signin.API_KEY"
+        android:value="262318413907-4hfnhcenonkel8vntiombpm9g2k9kdio.apps.googleusercontent.com" />
     </application>
 </manifest>

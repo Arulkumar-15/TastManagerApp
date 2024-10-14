@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "262318413907",
-    "project_id": "taskmanager-255b6",
-    "storage_bucket": "taskmanager-255b6.appspot.com"
+    "project_number": "568453445836",
+    "project_id": "taskmanager-86407",
+    "storage_bucket": "taskmanager-86407.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:262318413907:android:4c272126a0b30ab1c5cea6",
+        "mobilesdk_app_id": "1:568453445836:android:f32e4778d4e885de936a69",
         "android_client_info": {
           "package_name": "com.tastmanagerapp"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCEh0HD_2HDN33HIpqUshhCbqf3UWVQloE"
+          "current_key": "AIzaSyAs19tOsgZc2Vu8KRsqUG1xYB3CU3SiJXw"
         }
       ],
       "services": {

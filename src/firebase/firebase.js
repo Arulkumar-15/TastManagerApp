@@ -1,21 +1,22 @@
-// firebase.js
-import { firebase } from '@react-native-firebase/app';
+import firebase from '@react-native-firebase/app';
 import auth from '@react-native-firebase/auth';
 
 // Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBe0cZrcw8SsUarGX9Kd2wWCincgadKRuQ",
-  authDomain: "taskmanager-255b6.firebaseapp.com",
-  projectId: "taskmanager-255b6",
-  storageBucket: "taskmanager-255b6.appspot.com",
-  messagingSenderId: "262318413907",
-  appId: "1:262318413907:web:29006845b50a6d04c5cea6",
-  measurementId: "G-GZH0QPE948"
+  apiKey: "AIzaSyAs5DcYxXNMwkzfw0NLnqidZwly4FKsXD0",
+  authDomain: "taskmanager-86407.firebaseapp.com",
+  projectId: "taskmanager-86407",
+  storageBucket: "taskmanager-86407.appspot.com",
+  messagingSenderId: "568453445836",
+  appId: "1:568453445836:web:4cb4639573d04b66936a69",
+  measurementId: "G-C376YR33CW"
 };
 
 // Initialize Firebase if not already initialized
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
+} else {
+  firebase.app(); // if already initialized, use that one
 }
 
 export { auth };

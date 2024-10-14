@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import LoginScreen from '../screens/loginScreen';
 import TaskScreen from '../screens/TaskScreen';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import RegisterScreen from '../screens/RegisterScreen';
 
 
 
@@ -17,6 +18,7 @@ const App = () => {
       <Stack.Navigator initialRouteName="Login">
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Task" component={TaskScreen} />
+        <Stack.Screen name="Register" component={RegisterScreen} />
       </Stack.Navigator>
     </NavigationContainer>
     </SafeAreaProvider>
