@@ -168,7 +168,7 @@ const TaskScreen = () => {
                 <TouchableOpacity style={styles.editbtn}
                   onPress={() => {
                     setNewTask(item);
-                    setEditingTaskId(item.id); // Set the editing task ID
+                    setEditingTaskId(item.id); 
                   }}>
                   <Text style={styles.editText}>Edit</Text>
                 </TouchableOpacity>
@@ -180,7 +180,7 @@ const TaskScreen = () => {
             ) : (
               <Text style={styles.noPermissionText}>
                 No permission to edit/delete
-              </Text> // This is also wrapped
+              </Text> 
             )}
           </View>
         )}
@@ -225,7 +225,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffffff', 
     borderRadius: 4, 
     marginBottom: 8,
-    borderRadius:10
+    borderRadius:10,
+    elevation:3
 
   },
   taskTitle: {
@@ -248,6 +249,7 @@ const styles = StyleSheet.create({
   noPermissionText: {
     color: '#6c757d', 
     marginTop: 4,
+    marginLeft:10
   },
   deletebtn:{
     backgroundColor:'#dc3545',

@@ -12,7 +12,20 @@
           "package_name": "com.tastmanagerapp"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "568453445836-vl9odcq1e15md8ss5595ggfa5l3ko9eu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tastmanagerapp",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "568453445836-3u7vvm2k8nfqs1qfjljg6btauk2ir1bd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyAs19tOsgZc2Vu8KRsqUG1xYB3CU3SiJXw"
@@ -20,7 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "568453445836-3u7vvm2k8nfqs1qfjljg6btauk2ir1bd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

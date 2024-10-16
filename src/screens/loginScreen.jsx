@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {auth} from '../firebase/firebase';
-import {GoogleSignin} from '@react-native-google-signin/google-signin';
+import {GoogleSignin, statusCodes} from '@react-native-google-signin/google-signin';
 
 const LoginScreen = ({navigation}) => {
   const [email, setEmail] = useState('');
@@ -47,31 +47,34 @@ const LoginScreen = ({navigation}) => {
   };
 
   GoogleSignin.configure({
-    webClientId:"262318413907-4hfnhcenonkel8vntiombpm9g2k9kdio.apps.googleusercontent.com", 
+    webClientId:"568453445836-vl9odcq1e15md8ss5595ggfa5l3ko9eu.apps.googleusercontent.com", 
    offlineAccess:true,
 
   });
-  const handleGoogleSignIn = async () => {
+  const handleGoogleLogin = async () => {
     try {
+      console.log("Checking for Play Services");
       await GoogleSignin.hasPlayServices();
-      const {idToken} = await GoogleSignin.signIn();
-      console.log(idToken)
-
-      const googleCredential = auth.GoogleAuthProvider.credential(idToken);
-
-      const userCredential = await auth().signInWithCredential(googleCredential);
-      console.log(userCredential)
-
-      await AsyncStorage.setItem('userEmail', userCredential.user.email);
-
-      Alert.alert('Google Sign-In Successful');
-      navigation.navigate('Task');
+      console.log("Play Services available");
+      
+      const googleUser = await GoogleSignin.signIn();
+      console.log("Google User:", googleUser);
+  
+      await GoogleSignin.signOut();
     } catch (error) {
-      Alert.alert('Google Sign-In Failed', error.message);
+      console.error("Sign in error:", JSON.stringify(error)); // Log full error
+      if (error.code === statusCodes.SIGN_IN_CANCELLED) {
+        console.log("Sign in cancelled");
+      } else if (error.code === statusCodes.IN_PROGRESS) {
+        console.log("Sign in in progress");
+      } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
+        console.log("Play services not available");
+      } else {
+        console.error("Sign in error:", error);
+      }
     }
   };
-
-
+  
 
 
   return (
@@ -112,7 +115,7 @@ const LoginScreen = ({navigation}) => {
           Don't have an account? Register here
         </Text>
       <View>
-        <TouchableOpacity style={styles.googlebtn} onPress={handleGoogleSignIn}>
+        <TouchableOpacity style={styles.googlebtn} onPress={handleGoogleLogin}>
         <Image style={styles.google} source={require("../../Assets/google_login.png")}/>
         </TouchableOpacity>
       </View>

@@ -24,6 +24,6 @@
       </activity>
          <meta-data
         android:name="com.google.android.gms.auth.api.signin.API_KEY"
-        android:value="262318413907-4hfnhcenonkel8vntiombpm9g2k9kdio.apps.googleusercontent.com" />
+        android:value="568453445836-vl9odcq1e15md8ss5595ggfa5l3ko9eu.apps.googleusercontent.com" />
     </application>
 </manifest>
