@@ -126,8 +126,9 @@ const TaskScreen = () => {
           placeholderTextColor={'black'}
         />
         <View style={styles.statusContainer}>
+          <View style={{flexDirection:'row',alignContent:'space-between',alignItems:"flex-end"}}>
           <Text style={{color: 'black'}}>Status:</Text>
-          <View style={{marginLeft:230}}>
+          <View>
           <Button 
             title={
               newTask.status === 'in progress' ? 'In Progress' : 'Completed'
@@ -144,6 +145,7 @@ const TaskScreen = () => {
             />
             </View>
         </View>
+            </View>
         {editingTaskId ? (
           <Button title="Update Task" onPress={editTask} />
         ) : (
@@ -188,92 +190,114 @@ const TaskScreen = () => {
     </SafeAreaView>
   );
 };
-
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
     padding: 16,
-    backgroundColor: '#f8f9fa', 
+    backgroundColor: '#f0f4f7', 
   },
   emailText: {
     fontSize: 18,
     fontWeight: 'bold',
-    marginBottom: 16,
-    color: '#343a40', 
+    marginBottom: 20, 
+    color: '#333', 
   },
   taskInputContainer: {
-    marginBottom: 24,
+    marginBottom: 20, 
+    padding: 10,
+    backgroundColor: '#fff', 
+    borderRadius: 8,
+    elevation: 3, 
   },
   input: {
-    borderColor: '#6c757d',
+    borderColor: '#d1d5db', 
     borderWidth: 1,
-    padding: 8,
-    marginBottom: 12,
-    borderRadius: 4, 
-    backgroundColor: '#ffffff',
-    color: 'black',
+    padding: 12, 
+    marginBottom: 15,
+    borderRadius: 8, 
+    backgroundColor: '#fff',
+    color: '#000', 
   },
   statusContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 12,
+    marginBottom: 15,
+  },
+  statusText: {
+    fontSize: 16,
+    color: '#555', 
+    marginRight: 10,
   },
   taskContainer: {
-    borderBottomWidth: 1,
-    borderColor: '#ced4da', 
-    paddingVertical: 12,
-    backgroundColor: '#ffffff', 
-    borderRadius: 4, 
-    marginBottom: 8,
-    borderRadius:10,
-    elevation:3
-
+    backgroundColor: '#fff', 
+    borderRadius: 10, 
+    paddingVertical: 16, 
+    paddingHorizontal: 20,
+    marginBottom: 15, 
+    borderColor: '#e2e8f0', 
+    borderWidth: 1,
+    elevation: 2, 
   },
   taskTitle: {
     fontSize: 16,
-    fontWeight: 'bold',
-    color: '#007bff', 
+    fontWeight: '600',
+    color: '#0077cc',
+    marginBottom: 8,
+  },
+  descriptionText: {
+    fontSize: 14,
+    color: '#555',
+    marginBottom: 8,
   },
   statusText: {
-    color: '#28a745',
+    fontSize: 14,
+    fontWeight: '500',
+    color:'#28a745', 
+    marginBottom: 8,
+  },
+  btncon: {
+    flexDirection: 'row',
+    justifyContent: 'space-between', 
+    marginTop: 10,
   },
   editText: {
-    color: 'white', 
-    marginTop: 4,
+    color: '#fff', 
+    fontSize: 14,
+    fontWeight: '500',
   },
   deleteText: {
-    color: 'white', 
-    marginTop: 4,
-    
+    color: '#fff', 
+    fontSize: 14,
+    fontWeight: '500',
+  },
+  editbtn: {
+    backgroundColor: '#007bff', 
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 8, 
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight: 10, 
+    elevation: 2,
+  },
+  deletebtn: {
+    backgroundColor: '#dc3545',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 8, 
+    justifyContent: 'center',
+    alignItems: 'center',
+    elevation: 2,
   },
   noPermissionText: {
-    color: '#6c757d', 
-    marginTop: 4,
-    marginLeft:10
+    fontSize: 14,
+    color: '#6c757d',
+    marginTop: 8,
   },
-  deletebtn:{
-    backgroundColor:'#dc3545',
-    width:70,
-    height:50,
-    alignItems:"center",
-    justifyContent:"center",
-    borderRadius:10,
-    marginLeft:"80%"
+  container: {
+    marginBottom: 8, 
   },
-  container:{
-    marginLeft:10
-  },
-  editbtn:{
-    backgroundColor:'blue',
-    width:70,
-    height:50,
-    alignItems:"center",
-    justifyContent:"center",
-    borderRadius:10,
-    marginLeft:"80%",
-    marginBottom:10
-  },
-  
 });
+
 
 export default TaskScreen;

@@ -3,7 +3,6 @@ import {
   View,
   Text,
   TextInput,
-  Button,
   StyleSheet,
   Alert,
   SafeAreaView,
@@ -62,7 +61,7 @@ const LoginScreen = ({navigation}) => {
   
       await GoogleSignin.signOut();
     } catch (error) {
-      console.error("Sign in error:", JSON.stringify(error)); // Log full error
+      console.error("Sign in error:", JSON.stringify(error)); 
       if (error.code === statusCodes.SIGN_IN_CANCELLED) {
         console.log("Sign in cancelled");
       } else if (error.code === statusCodes.IN_PROGRESS) {
